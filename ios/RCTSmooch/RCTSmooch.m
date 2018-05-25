@@ -97,5 +97,12 @@ RCT_EXPORT_METHOD(setSignedUpAt:(NSDate*)date) {
   [SKTUser currentUser].signedUpAt = date;
 };
 
+RCT_EXPORT_METHOD(close) {
+  NSLog(@"Smooch close");
+
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [Smooch close];
+  });
+}
 
 @end

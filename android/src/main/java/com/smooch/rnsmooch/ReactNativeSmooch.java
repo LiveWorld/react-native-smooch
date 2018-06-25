@@ -1,6 +1,7 @@
 package com.smooch.rnsmooch;
 
 import android.content.Intent;
+import android.util.Log;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -108,6 +109,18 @@ public class ReactNativeSmooch extends ReactContextBaseJavaModule {
         }
 
         return userProperties;
+    }
+
+    @ReactMethod
+    public void getUserId(Promise promise) {
+        Log.d("Smooch getUserId");
+        promise.resolve(User.getCurrentUser().getUserId());
+    }
+
+    @ReactMethod
+    public void close() {
+        Log.d("Smooch close");
+        ConversationActivity.close();
     }
 
 }

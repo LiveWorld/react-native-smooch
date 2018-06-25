@@ -113,13 +113,13 @@ public class ReactNativeSmooch extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void getUserId(Promise promise) {
-        Log.d("Smooch getUserId");
+        Log.d("","Smooch getUserId");
         promise.resolve(User.getCurrentUser().getUserId());
     }
 
     @ReactMethod
     public void close() {
-        Log.d("Smooch close");
+        Log.d("","Smooch close");
         ConversationActivity.close();
     }
 
